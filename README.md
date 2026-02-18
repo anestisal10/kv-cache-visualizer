@@ -12,6 +12,10 @@ See which tokens survive, which are forgotten, and whether the *attention sink* 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Tests](https://img.shields.io/badge/Tests-28%2F28_passing-brightgreen)]()
 
+<div align="center">
+  <img src="assets/kv-cache-visualizer-demo.gif" width="600" alt="Demo gif of the app running a prompt">
+</div>
+
 </div>
 
 ---
@@ -176,5 +180,6 @@ Designed for **consumer GPUs**. Tested on **NVIDIA RTX 2060 (6 GB VRAM)**.
 ## 📄 License
 
 This project is licensed under the MIT License, see [LICENSE](LICENSE) for details.
+
 
 
