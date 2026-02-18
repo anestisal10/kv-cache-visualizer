@@ -1,0 +1,22 @@
+# Core ML
+torch>=2.1.0
+transformers>=4.40.0
+accelerate>=0.27.0
+bitsandbytes>=0.43.0        # INT4/INT8 quantization
+
+# UI
+gradio>=4.20.0
+
+# Visualization
+plotly>=5.18.0
+matplotlib>=3.8.0           # Fallback / static plots
+seaborn>=0.13.0             # Heatmap styling
+
+# Experiment tracking
+numpy>=1.26.0
+pandas>=2.1.0
+pyyaml>=6.0.1               # Config files
+tqdm>=4.66.0                 # Progress bars
+
+# Testing
+pytest>=8.0.0

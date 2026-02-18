@@ -1,0 +1,46 @@
+# ── Python ────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+*.egg
+dist/
+build/
+*.so
+
+# ── Virtual Environment ──────────────────────────────
+venv/
+env/
+.venv/
+.env/
+
+# ── IDE ──────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ── OS ───────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── pytest ───────────────────────────────────────────
+.pytest_cache/
+htmlcov/
+.coverage
+coverage.xml
+
+# ── Model cache (large files, don't commit) ──────────
+*.bin
+*.safetensors
+*.gguf
+models/
+
+# ── Experiment results (reproducible, don't commit) ──
+results/
+
+# ── Misc ─────────────────────────────────────────────
+*.log
+.env

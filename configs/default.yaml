@@ -1,0 +1,53 @@
+# ──────────────────────────────────────────────
+# KV-Cache Visualizer — Default Configuration
+# ──────────────────────────────────────────────
+
+model:
+  # Primary target: small enough to leave ~5 GB VRAM free
+  name: "Qwen/Qwen2-0.5B-Instruct"
+  # Quantization: null (FP16), "4bit", or "8bit"
+  quantization: null
+  # Device: "cuda" or "cpu"
+  device: "cuda"
+  # Maximum new tokens to generate per run
+  max_new_tokens: 100
+
+cache:
+  # Maximum number of tokens to keep in the KV-Cache
+  max_cache_size: 256
+
+policies:
+  streaming_llm:
+    n_sink: 4
+    window_size: 252    # max_cache_size - n_sink
+
+  h2o:
+    heavy_hitter_budget: 128
+    recent_window: 128
+
+  window_only:
+    window_size: 256
+
+  random:
+    window_size: 256
+
+  no_eviction:
+    # No parameters — keeps everything
+
+ui:
+  # Gradio server settings
+  server_name: "0.0.0.0"
+  server_port: 7860
+  share: false
+  # Default prompt for demonstration
+  default_prompt: "The key insight behind attention mechanisms in transformers is that"
+
+experiments:
+  # Attention sink experiment settings
+  prompts:
+    - "The key insight behind attention mechanisms in transformers is that"
+    - "In a distant galaxy, a civilization of sentient machines had evolved to"
+    - "The mathematical foundations of quantum computing rely on"
+  n_sink_values: [0, 1, 2, 4]
+  window_size: 128
+  max_new_tokens: 200
