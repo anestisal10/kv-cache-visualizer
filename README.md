@@ -78,7 +78,7 @@ This visualizer lets you **watch eviction happen in real time**, compare policie
 
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/KV-Cache-Visualizer.git
+git clone https://github.com/anestisal10/kv-cache-visualizer.git
 cd KV-Cache-Visualizer
 
 # Install dependencies
@@ -176,4 +176,5 @@ Designed for **consumer GPUs**. Tested on **NVIDIA RTX 2060 (6 GB VRAM)**.
 ## 📄 License
 
 This project is licensed under the MIT License, see [LICENSE](LICENSE) for details.
+
 
