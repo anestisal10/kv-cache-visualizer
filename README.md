@@ -18,7 +18,7 @@ See which tokens survive, which are forgotten, and whether the *attention sink* 
 
 ## 🎯 What Is This?
 
-When LLMs generate text, they store **Key-Value (KV) pairs** for every previous token to avoid recomputation. On consumer GPUs (like the RTX 2060 with 6 GB VRAM), this cache quickly fills up. **Eviction policies** decide which tokens to discard — and this choice has a dramatic effect on output quality.
+When LLMs generate text, they store **Key-Value (KV) pairs** for every previous token to avoid recomputation. On consumer GPUs (like the RTX 2060 with 6 GB VRAM), this cache quickly fills up. **Eviction policies** decide which tokens to discard and this choice has a dramatic effect on output quality.
 
 This visualizer lets you **watch eviction happen in real time**, compare policies side-by-side, and investigate the [attention sink](https://arxiv.org/abs/2309.17453) hypothesis.
 
@@ -175,4 +175,5 @@ Designed for **consumer GPUs**. Tested on **NVIDIA RTX 2060 (6 GB VRAM)**.
 
 ## 📄 License
 
-This project is licensed under the MIT License — see [LICENSE](LICENSE) for details.
+This project is licensed under the MIT License, see [LICENSE](LICENSE) for details.
+
