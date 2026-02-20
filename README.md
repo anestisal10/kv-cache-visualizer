@@ -47,21 +47,17 @@ This visualizer lets you **watch eviction happen in real time**, compare policie
 
 ## 📐 Architecture
 
-```
-┌─────────────┐     ┌──────────────────┐     ┌─────────────────┐
-│  Gradio UI  │────▶│   Orchestrator   │────▶│  Model Backend  │
-│  (3 tabs)   │     │  (gen loop)      │     │  (HF models)    │
-└─────────────┘     └────────┬─────────┘     └─────────────────┘
-                             │
-                    ┌────────▼─────────┐
-                    │  Cache Manager   │
-                    │  (evict + track) │
-                    └────────┬─────────┘
-                             │
-              ┌──────────────┼──────────────┐
-              ▼              ▼              ▼
-        StreamingLLM       H2O        Window-Only
-        (sink+window)  (heavy-hitter)  (baseline)
+```mermaid
+flowchart TD
+    A["🌐 Browser"] -->|HTTP| B["Gradio UI<br/>(3 tabs)"]
+    B -->|generate request| C["Orchestrator<br/>(token loop)"]
+    C -->|load model| D["Model Backend<br/>(HuggingFace)"]
+    D -->|raw KV tensors| E["Cache Manager<br/>(evict + track)"]
+    E --> F["StreamingLLM<br/>(sink+window)"]
+    E --> G["H2O<br/>(heavy-hitter)"]
+    E --> H["Window-Only<br/>(baseline)"]
+    E --> I["Random / No-Evict"]
+    E -->|history| B
 ```
 
 ---
@@ -180,6 +176,7 @@ Designed for **consumer GPUs**. Tested on **NVIDIA RTX 2060 (6 GB VRAM)**.
 ## 📄 License
 
 This project is licensed under the MIT License, see [LICENSE](LICENSE) for details.
+
 
 
 
